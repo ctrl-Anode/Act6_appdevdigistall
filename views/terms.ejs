@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiStall</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-custom, .btn-success {
+            background-color:white; 
+            color: #54b4d3;
+            border: none;
+        }
+
+        .card {
+            max-width: 500px;
+            margin: auto;
+            background-color: #54b4d3;
+            color: white;
+        }
+
+        .form-control:focus {
+            box-shadow: none;
+            border-color: #54b4d3;
+        }
+
+        footer {
+            background-color: #54b4d3;
+            color: white;
+            padding: 20px;
+        }
+        footer{
+            color: black;
+          }
+          p{
+            color: black;
+          }
+          h3{
+            color: black;
+          }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg" style="background-color: #54b4d3;">
+            <div class="container">
+                <!-- Navbar brand with image and title -->
+                <a class="navbar-brand d-flex align-items-center fw-bold" href="#">
+                    <img src="https://th.bing.com/th/id/OIP.4XcHzFDeDP7lGhe7ubZAdQHaCH?w=347&h=100&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="DigiStall" style="width: 150px; border-radius: 15px;" class="me-2">
+                </a>  
+        
+                <!-- Toggler button for mobile view -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <!-- Navbar links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <main class="container my-4">
+        <div class="text-center">
+            <img src="https://th.bing.com/th/id/OIP.4XcHzFDeDP7lGhe7ubZAdQHaCH?w=347&h=100&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="DigiStall" style="width: 150px;">
+            <h3 class="mt-4">Sign Up! We Welcome You.</h3>
+
+            <!-- Form section -->
+            <div class="card mt-5 border-0">
+                <div class="card-body">
+                    <h5 style="color: black;" class="text-custom">DigiStall</h5>
+                    <h3 class="card-text mb-4">Terms & Conditions</h3>
+
+                    <!-- Form fields -->
+                    <form action="/login" style="color: black">
+                        <div class="form-check mb-3">
+                            <input type="checkbox" class="form-check-input" id="optOutMarketing" required>
+                            <label class="form-check-label" for="optOutMarketing">I would prefer to receive marketing messages from DigiStall</label>
+                        </div>
+
+                        <div class="form-check mb-3">
+                            <input type="checkbox" class="form-check-input" id="shareData" required>
+                            <label class="form-check-label" for="shareData">Share my registration data with DigiStall's content providers for marketing purposes.</label>
+                        </div>
+
+                        <div class="form-check mb-4" >
+                            <input type="checkbox" class="form-check-input" id="agreeTerms" required>
+                            <label class="form-check-label" for="agreeTerms">
+                                I agree to the <a style="color:white;" href="#" class="text-custom">DigiStall Terms and Conditions of Use</a> and <a style="color:white;" href="#" class="text-custom">Privacy Policy</a>.
+                            </label>
+                        </div>
+
+                        <button type="submit" style="color:black;" class="btn btn-custom">Sign up</button>
+                    </form>
+
+                    <hr class="my-3 text-light">
+                    <div class="mt-4">
+                        <p>Already have an account? <a href="/login" style="color:white;" class="text-custom">Log in here</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer section -->
+    <footer class="text-center">
+        <p class="mb-0">&copy; 2024 DigiStall. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

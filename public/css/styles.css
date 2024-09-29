@@ -1,0 +1,47 @@
+/* styles.css */
+
+:root {
+  --bs-primary: #008080; /* Teal */
+  --bs-primary-hover: #006666; /* Darker teal for hover states */
+}
+
+body {
+  background-color: #f8f9fa;
+}
+
+header {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #008080;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #006666;
+}
+
+.hero-section {
+  background-color: #008080;
+  color: white;
+}
+
+/* Button styles for Add to Cart buttons */
+.card-footer .btn-primary, 
+.card-footer .btn {
+  background-color: #008080 !important; /* Teal color */
+  border-color: #008080 !important; /* Teal border */
+  color: white !important; /* Text color */
+}
+
+.card-footer .btn-primary:hover, 
+.card-footer .btn:hover {
+  background-color: #006666 !important; /* Darker teal on hover */
+  border-color: #006666 !important; /* Darker teal border on hover */
+}
+
+footer {
+  background-color: #006666;
+  color: white;
+}

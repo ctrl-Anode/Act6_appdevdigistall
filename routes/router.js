@@ -16,6 +16,7 @@ routes.get('/admin', digicon.admin);
 
 
 routes.post('/save', digicon.save);
+routes.post('/message', digicon.message);
 
 
 

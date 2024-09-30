@@ -39,6 +39,13 @@ const node = {
     },
     admin:(req, res) =>{
         res.render('admin');
+    },
+    message:(req, res)=>{
+        const data = req.body;
+        digimodel.message(data, (err) =>{
+            if (err) throw err;
+            res.redirect('contact');
+        });   
     }
 };
 

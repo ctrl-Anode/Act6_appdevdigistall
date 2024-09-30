@@ -33,7 +33,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="/">Home</a>
+                            <a class="nav-link" href="/home">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/products">Products</a>
@@ -55,7 +55,7 @@
                     <a href="/cart" class="btn btn-outline-info position-relative">
                         <i class="bi bi-cart-fill"></i>
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                            0
+                            
                             <span class="visually-hidden">items in cart</span>
                         </span>
                     </a>
@@ -72,24 +72,24 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title mb-4">Send us a message</h5>
-                        <form>
+                        <form action="/message" method="POST">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Your Name</label>
-                                <input type="text" class="form-control" id="name" required>
+                                <input type="text" name="name" class="form-control" id="name" required>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email Address</label>
-                                <input type="email" class="form-control" id="email" required>
+                                <input type="email" name="email" class="form-control" id="email" required>
                             </div>
                             <div class="mb-3">
                                 <label for="subject" class="form-label">Subject</label>
-                                <input type="text" class="form-control" id="subject" required>
+                                <input type="text" name="subject" class="form-control" id="subject" required>
                             </div>
                             <div class="mb-3">
                                 <label for="message" class="form-label">Message</label>
-                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                                <textarea class="form-control" name="message" id="message" rows="5" required></textarea>
                             </div>
-                            <button type="submit" class="btn btn-info">Send Message</button>
+                            <input type="submit" class="btn btn-info w-50" value="Send Message">
                         </form>
                     </div>
                 </div>

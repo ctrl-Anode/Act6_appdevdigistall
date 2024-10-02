@@ -5,12 +5,16 @@ const path = require('path');
 
 const app = express();
 
+const session = require('express-session');
+
 app.set('view engine', 'ejs');
-app.use(bodyParser.urlencoded({extender:true}));
+app.use(bodyParser.urlencoded({extended:true}));
 app.use('/', routes);
 app.use(express.static('public'));
 
 app.listen(8001, ()=>{
     console.log('server initialized on http://localhost:8001');
-
 });
+
+
+

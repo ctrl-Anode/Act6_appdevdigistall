@@ -1,5 +1,6 @@
 const express = require('express');
 const digicon = require('../controller/digicontroller');
+const cartcon = require('../controller/cartController');
 const routes = express.Router();
 
 routes.get('/', digicon.index);
@@ -14,11 +15,16 @@ routes.get('/positions', digicon.positions);
 routes.get('/products', digicon.products);
 routes.get('/admin', digicon.admin);
 
+routes.get('/account', digicon.account);
 
 routes.post('/save', digicon.save);
+routes.post('/message', digicon.message);
 
 
-
+routes.post('/cart/add', cartcon.add);
+routes.get('/cart', cartcon.get);
+routes.post('/cart/update', cartcon.update);
+routes.post('/cart/delete', cartcon.delete);
 
 
 module.exports = routes;

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiStall</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .btn-custom {
+            background-color:white;
+            color: #54b4d3;
+            border: none;
+        }
+        .card {
+            max-width: auto;
+            margin: auto;
+            background-color: #54b4d3;
+            color: white;
+        }
+        .form-control:focus {
+            box-shadow: none;
+            border-color: #1db954;
+        }
+        .form-check-label a {
+            color: #1db954;
+        }
+        footer {
+            background-color: #54b4d3;
+            color: white;
+            padding: 20px;
+        }
+        label {
+            display: block;
+            text-align: left; 
+            margin-bottom: 5px;
+          }
+          footer{
+            color: black;
+          }
+          p{
+            color: black;
+          }
+          a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg" style="background-color: #54b4d3;">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center fw-bold" href="#">
+                    <img src="https://th.bing.com/th/id/OIP.4XcHzFDeDP7lGhe7ubZAdQHaCH?w=347&h=100&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="DigiStall" style="width: 150px; border-radius: 15px;" class="me-2">
+                </a>
+        
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Administrator
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li class="nav-item">
+                                    <a class="dropdown-item" href="/addproducts">Add Products</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="dropdown-item" href="/prodinfo">Manage Products</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="dropdown-item" href="/userinfo">Manage Users</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/usersmessages">User's Messages</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/">Log Out</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+    </header>
+
+    <main class="container my-4">
+        <div class="text-center">
+            <img src="https://th.bing.com/th/id/OIP.4XcHzFDeDP7lGhe7ubZAdQHaCH?w=347&h=100&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="DigiStall" style="width: 150px;">
+            <h3 class="mt-4">DigiStall Management.</h3>
+
+            <div class="card mt-5 border-0">
+                <div class="card-body">
+                        <form action="/prodinfo" method="GET">
+                            <h4 style="color:black">Administrator</h4><br>
+
+                            <table class="table table-light">
+                                <tbody>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Product Name</th>
+                                        <th>Description</th>
+                                        <th>Price</th>
+                                        <th>Stocks Quantity</th>
+                                        <th>Created At</th>
+                                        <th>Updated At</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    <% prodinfo.forEach(digimodel => { %>
+                                        <tr>
+                                          <td><%= digimodel.id %></td>
+                                          <td><%= digimodel.name %></td>
+                                          <td><%= digimodel.description %></td>
+                                          <td><%= digimodel.price %></td>
+                                          <td><%= digimodel.stock_quantity %></td>
+                                          <td><%= digimodel.created_at %></td>
+                                          <td><%= digimodel.updated_at %></td>
+                                          <td>
+                                                <a href="/edit/<%= digimodel.id %>" style="color: rgb(51, 44, 247); text-decoration: none;">Update</a>
+                                                <a href="/delete/<%= digimodel.id %>" style="color: rgb(247, 4, 4); text-decoration: none;">Delete</a> 
+                                          </td>
+                                        </tr>
+                                      <% }) %>
+                                      
+                                </tbody>
+                            </table>
+    
+                        </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center">
+        <p class="mb-0">&copy; 2024 DigiStall. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -5,7 +5,10 @@ const routes = express.Router();
 routes.get('/', digicon.index);
 routes.get('/signup', digicon.signup);
 routes.get('/terms', digicon.terms);
+
 routes.get('/login', digicon.login);
+routes.post('/login', digicon.userlogin);
+
 routes.get('/home', digicon.home);
 routes.get('/about', digicon.about);
 routes.get('/cart', digicon.cart);

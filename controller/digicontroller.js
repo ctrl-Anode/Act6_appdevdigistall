@@ -137,7 +137,18 @@ const node = {
             res.redirect('/usersmessages');
         });
         
-    }
+    },
+    userlogin: (req, res) => {
+        const { email, password } = req.body;
+        digimodel.findUserByEmail(email, (err, results) => {
+            if (err) throw err;
+            if (results.length && results[0].password === password) {
+                res.redirect('/home');
+            } else {
+                res.send('Invalid email or password');
+            }
+        });
+    },
 };
 
 module.exports = node;

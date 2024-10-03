@@ -1,8 +1,9 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 const routes = require('./routes/router');
-
 const path = require('path');
+
+const session = require('express-session');//added
 
 const app = express();
 
@@ -11,6 +12,12 @@ app.use(bodyParser.urlencoded({extender:true}));
 app.set('views', path.join(__dirname, 'views'));
 app.use('/', routes);
 app.use(express.static('public'));
+
+app.use(session({
+    secret: 'your_secret_key',
+    resave: false,
+    saveUninitialized: true
+}));//added
 
 
 

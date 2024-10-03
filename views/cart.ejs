@@ -54,140 +54,38 @@
             </div>
         </nav>
     </header>
-
-    <main class="container my-5">
-        <h1 class="display-4 fw-bold mb-4">My Cart</h1>
-        
-        <div class="row">
-            <div class="col-lg-8 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title mb-4">Cart Items</h5>
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Product</th>
-                                        <th scope="col">Price</th>
-                                        <th scope="col">Quantity</th>
-                                        <th scope="col">Total</th>
-                                        <th scope="col"></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <img src="https://www.techspecs.info/_next/image/?url=https%3A%2F%2Fwww.techspecs.info%2Fuploads%2FApple_i_Phone_16_specification_feed5e61f2.jpg&w=640&q=75" alt="Smartphone X" class="me-3" style="width: 50px; height: 50px; object-fit: cover;">
-                                                <span>Smartphone X</span>
-                                            </div>
-                                        </td>
-                                        <td>$699.99</td>
-                                        <td>
-                                            <div class="input-group" style="width: 120px;">
-                                                <button class="btn btn-outline-secondary" type="button">-</button>
-                                                <input type="text" class="form-control text-center" value="1">
-                                                <button class="btn btn-outline-secondary" type="button">+</button>
-                                            </div>
-                                        </td>
-                                        <td>$699.99</td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-danger">
-                                                <i class="bi bi-trash"></i>
-                                                <span class="visually-hidden">Remove item</span>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <img src="https://i.ebayimg.com/images/g/qRIAAOSwgV5iMRoy/s-l1200.jpg" alt="Wireless Earbuds" class="me-3" style="width: 50px; height: 50px; object-fit: cover;">
-                                                <span>Wireless Earbuds</span>
-                                            </div>
-                                        </td>
-                                        <td>$149.99</td>
-                                        <td>
-                                            <div class="input-group" style="width: 120px;">
-                                                <button class="btn btn-outline-secondary" type="button">-</button>
-                                                <input type="text" class="form-control text-center" value="1">
-                                                <button class="btn btn-outline-secondary" type="button">+</button>
-                                            </div>
-                                        </td>
-                                        <td>$149.99</td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-danger">
-                                                <i class="bi bi-trash"></i>
-                                                <span class="visually-hidden">Remove item</span>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <img src="https://i5.walmartimages.com/asr/dda6bc1f-d282-4cf9-ad29-e827222bc4d5.8d402328f4d54e2b9a252879ec51fb79.jpeg" alt="Smart Watch" class="me-3" style="width: 50px; height: 50px; object-fit: cover;">
-                                                <span>Smart Watch</span>
-                                            </div>
-                                        </td>
-                                        <td>$199.99</td>
-                                        <td>
-                                            <div class="input-group" style="width: 120px;">
-                                                <button class="btn btn-outline-secondary" type="button">-</button>
-                                                <input type="text" class="form-control text-center" value="1">
-                                                <button class="btn btn-outline-secondary" type="button">+</button>
-                                            </div>
-                                        </td>
-                                        <td>$199.99</td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-danger">
-                                                <i class="bi bi-trash"></i>
-                                                <span class="visually-hidden">Remove item</span>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title mb-4">Order Summary</h5>
-                        <div class="d-flex justify-content-between mb-2">
-                            <span>Subtotal</span>
-                            <span>$1,049.97</span>
-                        </div>
-                        <div class="d-flex justify-content-between mb-2">
-                            <span>Shipping</span>
-                            <span>$10.00</span>
-                        </div>
-                        <div class="d-flex justify-content-between mb-2">
-                            <span>Tax</span>
-                            <span>$105.00</span>
-                        </div>
-                        <hr>
-                        <div class="d-flex justify-content-between mb-4">
-                            <strong>Total</strong>
-                            <strong>$1,164.97</strong>
-                        </div>
-                        <button class="btn btn-info w-100 mb-2">Proceed to Checkout</button>
-                        <button class="btn btn-outline-secondary w-100">Continue Shopping</button>
-                    </div>
-                </div>
-                <div class="card mt-4">
-                    <div class="card-body">
-                        <h5 class="card-title mb-3">Have a promo code?</h5>
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Enter code">
-                            <button class="btn btn-outline-secondary" type="button">Apply</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
+<main class="container my-4">
+    <h1>Your Cart</h1>
+    <form action="/add-to-cart" method="POST">
+        <% if (viewCart.length > 0) { %>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% viewCart.forEach(digimodel => { %>
+                    <tr>
+                        <td><%= digimodel.name %></td>
+                        <td><%= digimodel.quantity %></td>
+                        <td>$<%= digimodel.price %></td>
+                        <td>$<%= digimodel.price * digimodel.quantity %></td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+            <form action="/checkout" method="POST">
+                <button type="submit" class="btn btn-success">Checkout</button>
+            </form>
+            <% } else { %>
+            <p>Your cart is empty.</p>
+            <% } %>
+    </form>
+</main>
 
     <footer class="bg-dark text-white py-4">
         <div class="container">

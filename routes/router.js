@@ -9,9 +9,9 @@ routes.get('/terms', digicon.terms);
 routes.get('/login', digicon.login);
 routes.post('/login', digicon.userlogin);
 
-routes.get('/home', digicon.home);
+//routes.get('/home', digicon.home);
 routes.get('/about', digicon.about);
-routes.get('/cart', digicon.cart);
+//routes.get('/cart', digicon.cart);
 routes.get('/contact', digicon.contact);
 routes.get('/positions', digicon.positions);
 routes.get('/products', digicon.products);
@@ -35,11 +35,20 @@ routes.post('/useredit/:id', digicon.userupdate);
 routes.get('/usersmessages', digicon.usersmessages);
 routes.get('/messagedelete/:id', digicon.messagedelete);
 
-
 routes.post('/save', digicon.save);
 routes.post('/message', digicon.message);
 routes.post('/addprod', digicon.addprod);
+//added
+routes.get('/dashboard', digicon.showDashboard);
 
+// Add a product to the cart
+routes.post('/add-to-cart', digicon.addToCart);
+
+// View the cart
+routes.get('/cart', digicon.viewCart);
+
+// Checkout (process transactions)
+routes.post('/checkout', digicon.checkout);
 
 
 

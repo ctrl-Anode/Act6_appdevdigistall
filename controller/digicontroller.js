@@ -18,16 +18,16 @@ const node = {
     },
     login:(req, res) =>{
         res.render('login');
-    },
+    },/*
     home:(req, res) =>{
         res.render('home');
-    },
+    },*/
     about:(req, res) =>{
         res.render('about');
-    },
+    },/*
     cart:(req, res) =>{
         res.render('cart');
-    },
+    },*/
     contact:(req, res) =>{
         res.render('contact');
     },
@@ -148,7 +148,43 @@ const node = {
                 res.send('Invalid email or password');
             }
         });
+    },//add
+    showDashboard: (req, res) => {
+        digimodel.getAllProducts((err, results) => {
+            if (err) throw err;
+            res.render('home', { showDashboard : results });
+        });
     },
+
+    addToCart: (req, res) => {
+        const { productId, quantity } = req.body;
+        const data = req.data.id;  // Assume session management is done
+        digimodel.addToCart(productId, quantity, data, (err) => {
+            if (err) throw err;
+            res.redirect('/cart');
+        });
+    },
+
+    viewCart: (req, res) => {
+        const data = req.body.id;
+        digimodel.getCartItems(data, (err, results) => {
+            if (err) throw err;
+            res.render('cart', {viewCart : results });
+        });
+    },
+
+    checkout: (req, res) => {
+        const data = req.body.id;
+        digimodel.processTransaction(data, (err) => {
+            if (err) throw err;
+            
+            // Clear the cart after transaction
+            productModel.clearCart(sessionId, (clearErr) => {
+                if (clearErr) throw clearErr;
+                res.redirect('/transactions');
+            });
+        });
+    }
 };
 
 module.exports = node;

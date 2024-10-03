@@ -59,101 +59,30 @@
             </div>
         </nav>
     </header>
-
-    <main class="container my-4">
-        <section class="mb-5">
-            <div class="hero-section rounded-3 p-5">
-                <div class="row align-items-center">
-                    <div class="col-md-6 mb-4 mb-md-0">
-                        <h2 class="display-5 fw-bold mb-3">New Arrival: Ultra Slim Laptop</h2>
-                        <p class="mb-4">Experience lightning-fast performance in a sleek design.</p>
-                        <button class="btn btn-light">Shop Now</button>
-                    </div>
-                    <div class="col-md-6">
-                        <img src="https://b2c-contenthub.com/wp-content/uploads/2023/01/0-news-lg-gram-laptop-line-up-for-2023-revealed-includes-ultraslim-model-image1-sgviouyx72-jpg.webp" alt="Ultra Slim Laptop" class="img-fluid rounded-3">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2 class="display-6 fw-bold mb-4">Featured Gadgets</h2>
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="https://i5.walmartimages.com/asr/dda6bc1f-d282-4cf9-ad29-e827222bc4d5.8d402328f4d54e2b9a252879ec51fb79.jpeg" class="card-img-top" alt="Smart Watch">
-                        <div class="card-body">
-                            <h5 class="card-title">Smart Watch</h5>
-                            <p class="card-text fw-bold">$199.99</p>
-                        </div>
-                        <div class="card-footer">
-                            <button class="btn btn-info w-100">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="https://i.ebayimg.com/images/g/qRIAAOSwgV5iMRoy/s-l1200.jpg" class="card-img-top" alt="Wireless Earbuds">
-                        <div class="card-body">
-                            <h5 class="card-title">Wireless Earbuds</h5>
-                            <p class="card-text fw-bold">$149.99</p>
-                        </div>
-                        <div class="card-footer">
-                            <button class="btn btn-info w-100">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="https://zoneofdeals.com/wp-content/uploads/2023/12/samsung-tab-a8.jpg" class="card-img-top" alt="Tablet">
-                        <div class="card-body">
-                            <h5 class="card-title">Tablet</h5>
-                            <p class="card-text fw-bold">$299.99</p>
-                        </div>
-                        <div class="card-footer">
-                            <button class="btn btn-info w-100">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="https://www.techspecs.info/_next/image/?url=https%3A%2F%2Fwww.techspecs.info%2Fuploads%2FApple_i_Phone_16_specification_feed5e61f2.jpg&w=640&q=75" class="card-img-top" alt="Smartphone">
-                        <div class="card-body">
-                            <h5 class="card-title">Smartphone</h5>
-                            <p class="card-text fw-bold">$699.99</p>
-                        </div>
-                        <div class="card-footer">
-                            <button class="btn btn-info w-100">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSZ28u2IRahliOiviiSK4xcLE2-W-obxg-_g&s" class="card-img-top" alt="Laptop">
-                        <div class="card-body">
-                            <h5 class="card-title">Laptop</h5>
-                            <p class="card-text fw-bold">$999.99</p>
-                        </div>
-                        <div class="card-footer">
-                            <button class="btn btn-info w-100">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="https://urbangadgets.ph/wp-content/uploads/JBL-Go-4-Bluetooth-Speaker-Black-1.webp" class="card-img-top" alt="Bluetooth Speaker">
-                        <div class="card-body">
-                            <h5 class="card-title">Bluetooth Speaker</h5>
-                            <p class="card-text fw-bold">$79.99</p>
-                        </div>
-                        <div class="card-footer">
-                            <button class="btn btn-info w-100">Add to Cart</button>
-                        </div>
+<main class="container my-4">
+    <h1>Available Products</h1>
+    <form action="/dashboard" method="GET">
+        <div class="row">
+            <% showDashboard.forEach( digimodel => { %>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="<%= digimodel.image_url %>" class="card-img-top" alt="<%= digimodel.name %>">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= digimodel.name %></h5>
+                        <p class="card-text">Price: $<%= digimodel.price %></p>
+                        <p class="card-text">Available Quantity: <%= digimodel.stock_quantity %></p>
+                        <form action="/add-to-cart" method="POST">
+                            <input type="hidden" name="productId" value="<%= digimodel.id %>">
+                            <input type="number" name="quantity" min="1" max="<%= digimodel.quantity %>" value="1" class="form-control mb-2">
+                            <button type="submit" class="btn btn-info w-100">Add to Cart</button>
+                        </form>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+            <% }) %>
+        </div>
+    </form>
+</main>
 
     <footer class="bg-dark text-white py-4 mt-5">
         <div class="container text-center">

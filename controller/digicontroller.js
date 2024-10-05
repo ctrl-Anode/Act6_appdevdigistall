@@ -143,7 +143,7 @@ const node = {
         digimodel.findUserByEmail(email, (err, results) => {
             if (err) throw err;
             if (results.length && results[0].password === password) {
-                res.redirect('/home');
+                res.redirect('/dashboard');
             } else {
                 res.send('Invalid email or password');
             }

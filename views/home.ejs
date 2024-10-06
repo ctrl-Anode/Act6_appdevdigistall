@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DigiStall</title>
-    <link rel="stylesheet" href="/styles.css">
+    <title>DigiStall - Products</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
     <style>
         .hero-section {
-            background-color: 	#5bc0de;
+            background-color: #5bc0de;
             color: white;
         }
     </style>
@@ -25,20 +24,20 @@
                     <img src="https://th.bing.com/th/id/OIP.4XcHzFDeDP7lGhe7ubZAdQHaCH?w=347&h=100&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="DigiStall" style="width: 150px; border-radius: 15px;" class="me-2">
                 </a> 
                 <div class="collapse navbar-collapse" id="navbarNav">
-                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/dashboard">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/products">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact">Contact</a>
-                    </li>
-                </ul>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/dashboard">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/products">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact">Contact</a>
+                        </li>
+                    </ul>
                     <form class="d-flex me-2">
                         <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search">
                         <button class="btn btn-outline-secondary" type="submit">
@@ -57,23 +56,27 @@
                     </a>
                 </div>
             </div>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Log Out</a>
+                </li>
+            </ul>
         </nav>
     </header>
-<main class="container my-4">
-    <h1>Available Products</h1>
-    <form action="/dashboard" method="GET">
+    <main class="container my-4">
+        <h1>Available Products</h1>
         <div class="row">
-            <% showDashboard.forEach( digimodel => { %>
+            <% showDashboard.forEach(product => { %>
             <div class="col-md-4">
                 <div class="card mb-4">
-                    <img src="<%= digimodel.image_url %>" class="card-img-top" alt="<%= digimodel.name %>">
+                    <img src="<%= product.image_url %>" class="card-img-top" alt="<%= product.name %>">
                     <div class="card-body">
-                        <h5 class="card-title"><%= digimodel.name %></h5>
-                        <p class="card-text">Price: $<%= digimodel.price %></p>
-                        <p class="card-text">Available Quantity: <%= digimodel.stock_quantity %></p>
+                        <h5 class="card-title"><%= product.name %></h5>
+                        <p class="card-text">Price: $<%= product.price %></p>
+                        <p class="card-text">Available Quantity: <%= product.stock_quantity %></p>
                         <form action="/add-to-cart" method="POST">
-                            <input type="hidden" name="productId" value="<%= digimodel.id %>">
-                            <input type="number" name="quantity" min="1" max="<%= digimodel.quantity %>" value="1" class="form-control mb-2">
+                            <input type="hidden" name="productId" value="<%= product.id %>">
+                            <input type="number" name="quantity" min="1" max="<%= product.stock_quantity %>" value="1" class="form-control mb-2">
                             <button type="submit" class="btn btn-info w-100">Add to Cart</button>
                         </form>
                     </div>
@@ -81,15 +84,15 @@
             </div>
             <% }) %>
         </div>
-    </form>
-</main>
+    </main>
+    
 
-    <footer class="bg-dark text-white py-4 mt-5">
-        <div class="container text-center">
-            <p class="mb-0">&copy; 2024 DigiStall. All rights reserved.</p>
-        </div>
-    </footer>
+<footer class="bg-dark text-white py-4 mt-5">
+    <div class="container text-center">
+        <p class="mb-0">&copy; 2024 DigiStall. All rights reserved.</p>
+    </div>
+</footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

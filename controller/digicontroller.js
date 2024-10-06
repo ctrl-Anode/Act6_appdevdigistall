@@ -24,10 +24,10 @@ const node = {
     },*/
     about:(req, res) =>{
         res.render('about');
-    },/*
+    },
     cart:(req, res) =>{
         res.render('cart');
-    },*/
+    },
     contact:(req, res) =>{
         res.render('contact');
     },
@@ -148,41 +148,85 @@ const node = {
                 res.send('Invalid email or password');
             }
         });
-    },//add
+    },/*
+    products: (req, res) => {
+        digimodel.getAllProducts((err, results) => {
+            if (err) throw err;
+            res.render('products', {
+                showDashboard: results,
+                cartItemCount: req.session.cart ? req.session.cart.length : 0,
+            });
+        });
+    },
+    // Add to Cart Function
+    addToCart: (req, res) => {
+        const { productId, quantity } = req.body;
+    
+        // Query the database to get product details
+        digimodel.getProductById(productId, (err, results) => {
+            if (err || results.length === 0) {
+                return res.status(404).send('Product not found.');
+            }
+    
+            const product = results[0];
+    
+            // If stock is insufficient
+            if (product.stock_quantity < quantity) {
+                return res.status(400).send('Not enough stock available.');
+            }
+    
+            // Initialize session cart if it doesn't exist
+            req.session.cart = req.session.cart || [];
+    
+            // Find the product in the cart and update if exists, else add new product
+            const item = req.session.cart.find(item => item.id === productId);
+            if (item) {
+                item.quantity += quantity;  // Update quantity if already in the cart
+            } else {
+                req.session.cart.push({ id: product.id, name: product.name, price: product.price, quantity });
+            }
+    
+            res.redirect('/dashboard');  // Redirect back to the dashboard
+        });
+    },
+    
+
+    // View Cart
+    viewCart: (req, res) => {
+        res.render('cart', {
+            cart: req.session.cart || [],  // Cart data from session
+            totalAmount: req.session.cart ? req.session.cart.reduce((acc, item) => acc + (item.price * item.quantity), 0) : 0,
+            cartItemCount: req.session.cart ? req.session.cart.length : 0,
+        });
+    },
+
+    // Checkout Process
+    checkout: (req, res) => {
+        const cart = req.session.cart;
+
+        if (!cart || cart.length === 0) {
+            return res.status(400).send('Cart is empty.');
+        }
+
+        // Process each item in the cart
+        cart.forEach(item => {
+            digimodel.updateProductStock(item.id, item.quantity, (err) => {
+                if (err) {
+                    console.error('Error updating stock:', err);
+                }
+            });
+        });
+
+        // Clear the cart after checkout
+        req.session.cart = [];
+        res.send('Checkout complete! Your cart is now empty.');
+    },*/
+
+    // Dashboard rendering (home page)
     showDashboard: (req, res) => {
         digimodel.getAllProducts((err, results) => {
             if (err) throw err;
-            res.render('home', { showDashboard : results });
-        });
-    },
-
-    addToCart: (req, res) => {
-        const { productId, quantity } = req.body;
-        const data = req.data.id;  // Assume session management is done
-        digimodel.addToCart(productId, quantity, data, (err) => {
-            if (err) throw err;
-            res.redirect('/cart');
-        });
-    },
-
-    viewCart: (req, res) => {
-        const data = req.body.id;
-        digimodel.getCartItems(data, (err, results) => {
-            if (err) throw err;
-            res.render('cart', {viewCart : results });
-        });
-    },
-
-    checkout: (req, res) => {
-        const data = req.body.id;
-        digimodel.processTransaction(data, (err) => {
-            if (err) throw err;
-            
-            // Clear the cart after transaction
-            productModel.clearCart(sessionId, (clearErr) => {
-                if (clearErr) throw clearErr;
-                res.redirect('/transactions');
-            });
+            res.render('home', { showDashboard: results });
         });
     }
 };

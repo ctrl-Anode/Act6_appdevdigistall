@@ -60,43 +60,16 @@ const information = {
         const query = "SELECT * FROM products";
         db.query(query, callback);
     },
-    
-    addToCart: (productId, quantity, sessionId, callback) => {
-        const query = "INSERT INTO cart (product_id, quantity, session_id) VALUES (?, ?, ?)";
-        db.query(query, [productId, quantity, sessionId], callback);
+/*
+    getProductById: (id, callback) => {
+        const query = "SELECT * FROM products WHERE id = ?";
+        db.query(query, [id], callback);
     },
 
-    getCartItems: (sessionId, callback) => {
-        const query = `SELECT cart.id, products.name, products.price, cart.quantity 
-                       FROM cart 
-                       JOIN products ON cart.product_id = products.id 
-                       WHERE cart.session_id = ?`;
-        db.query(query, [sessionId], callback);
-    },
-
-    processTransaction: (sessionId, callback) => {
-        const query = `INSERT INTO transactions (product_id, quantity, total_price, session_id)
-                       SELECT cart.product_id, cart.quantity, (products.price * cart.quantity), cart.session_id
-                       FROM cart
-                       JOIN products ON cart.product_id = products.id
-                       WHERE cart.session_id = ?`;
-
-        db.query(query, [sessionId], (err, results) => {
-            if (err) return callback(err);
-
-            // After recording the transactions, update the product quantity
-            const updateQuery = `UPDATE products 
-                                 JOIN cart ON products.id = cart.product_id
-                                 SET products.quantity = products.quantity - cart.quantity
-                                 WHERE cart.session_id = ?`;
-            db.query(updateQuery, [sessionId], callback);
-        });
-    },
-
-    clearCart: (sessionId, callback) => {
-        const query = "DELETE FROM cart WHERE session_id = ?";
-        db.query(query, [sessionId], callback);
-    }
+    updateProductStock: (id, quantity, callback) => {
+        const query = "UPDATE products SET stock_quantity = stock_quantity - ? WHERE id = ?";
+        db.query(query, [quantity, id], callback);
+    }*/
 };
 
 module.exports = information;

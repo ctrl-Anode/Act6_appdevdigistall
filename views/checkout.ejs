@@ -52,6 +52,13 @@
                             <a class="nav-link" href="/contact">Contact</a>
                         </li>
                     </ul>
+                    <form class="d-flex me-2">
+                        <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search">
+                        <button class="btn btn-outline-secondary" type="submit">
+                            <i class="bi bi-search"></i>
+                            <span class="visually-hidden">Search</span>
+                        </button>
+                    </form>
                     <a href="/cart" class="btn btn-outline-info position-relative">
                         <i class="bi bi-cart-fill"></i>
                         <% if (typeof cartItemCount !== 'undefined' && cartItemCount > 0) { %>
@@ -73,24 +80,15 @@
                         </ul>
                     </li>
                 </ul>
+                </div>
             </div>
         </nav>
     </header>
     <main class="container my-4">
-        <h1>Available Products</h1>
+        <h1>CheckOut</h1>
         <div class="row">
-            <% cart.forEach(item => { %>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <li>
-                        <h2><%= item.product.name %></h2>
-                        <p>Quantity: <%= item.qty %></p>
-                        <p>Price: $<%= item.product.price %></p>
-                    </li>
-                </div>
-            </div>
-            <% }) %>
-            <a href="/cart/checkout">Checkout</a>
+    <p><%= message %></p>
+    <a href="/products">Back to Products</a>
         </div>
     </main>
     

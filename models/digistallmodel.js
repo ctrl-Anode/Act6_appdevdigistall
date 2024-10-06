@@ -60,16 +60,6 @@ const information = {
         const query = "SELECT * FROM products";
         db.query(query, callback);
     },
-/*
-    getProductById: (id, callback) => {
-        const query = "SELECT * FROM products WHERE id = ?";
-        db.query(query, [id], callback);
-    },
-
-    updateProductStock: (id, quantity, callback) => {
-        const query = "UPDATE products SET stock_quantity = stock_quantity - ? WHERE id = ?";
-        db.query(query, [quantity, id], callback);
-    }*/
 };
 
 module.exports = information;

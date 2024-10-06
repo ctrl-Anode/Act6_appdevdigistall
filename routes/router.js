@@ -11,10 +11,10 @@ routes.post('/login', digicon.userlogin);
 
 //routes.get('/home', digicon.home);
 routes.get('/about', digicon.about);
-routes.get('/cart', digicon.cart);
+//routes.get('/cart', digicon.cart);
 routes.get('/contact', digicon.contact);
 routes.get('/positions', digicon.positions);
-routes.get('/products', digicon.products);
+//routes.get('/products', digicon.products);
 routes.get('/admin', digicon.admin);
 routes.get('/addproducts', digicon.addproducts);
 //routes.get('/manageusers', digicon.manageusers);
@@ -40,11 +40,5 @@ routes.post('/message', digicon.message);
 routes.post('/addprod', digicon.addprod);
 //added
 routes.get('/dashboard', digicon.showDashboard);
-/*
-// Added Routes for Cart and Checkout
-routes.post('/add-to-cart', digicon.addToCart);  // Add to Cart
-routes.get('/cart', digicon.viewCart);  // View Cart
-routes.post('/checkout', digicon.checkout);  // Checkout
-*/
 
 module.exports = routes;

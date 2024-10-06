@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nau-Henyo - Home</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Nau-Henyo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-exclamation-triangle"></i> Report Incident</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-history"></i> My Reports</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-map-marked-alt"></i> Map</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-chart-bar"></i> Statistics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-envelope"></i> Messages</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-user"></i> Profile</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1 class="mb-4">Emergency Dashboard</h1>
+        
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-danger text-white">
+                        <h5 class="card-title mb-0"><i class="fas fa-exclamation-circle"></i> Recent Emergencies</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">Fire Incident</h5>
+                                    <small class="text-muted">3 mins ago</small>
+                                </div>
+                                <p class="mb-1">Barangay San Jose - Fire reported in residential area</p>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">Robbery</h5>
+                                    <small class="text-muted">1 hour ago</small>
+                                </div>
+                                <p class="mb-1">Barangay San Pedro - Convenience store robbery</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-warning">
+                        <h5 class="card-title mb-0"><i class="fas fa-bell"></i> Active Alerts</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-warning">
+                            <h5><i class="fas fa-flood"></i> Flood Warning</h5>
+                            <p>Elevated water levels in Naujan River. Residents in low-lying areas advised to prepare.</p>
+                        </div>
+                        <div class="alert alert-info">
+                            <h5><i class="fas fa-cloud-showers-heavy"></i> Heavy Rain Advisory</h5>
+                            <p>Expected heavy rainfall in the next 24 hours. Stay vigilant.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-phone-alt text-danger"></i> Emergency Hotlines</h5>
+                        <p class="card-text">Police: 911</p>
+                        <p class="card-text">Fire: 912</p>
+                        <p class="card-text">Ambulance: 913</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-chart-line text-primary"></i> Today's Statistics</h5>
+                        <p class="card-text">Reported Incidents: 5</p>
+                        <p class="card-text">Resolved Cases: 3</p>
+                        <p class="card-text">Active Alerts: 2</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-users text-success"></i> Emergency Response Teams</h5>
+                        <p class="card-text">Police Units Available: 4</p>
+                        <p class="card-text">Fire Trucks Ready: 2</p>
+                        <p class="card-text">Medical Teams On-call: 3</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

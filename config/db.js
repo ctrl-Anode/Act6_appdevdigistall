@@ -4,7 +4,7 @@ const db = mysql.createConnection({
     host: 'localhost',
     user: 'wtfvk',
     password: 'wtfvk',
-    database: 'gadgetstore_db'
+    database: 'ecomdigistall'
 
 });
 

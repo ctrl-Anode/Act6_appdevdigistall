@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DigiStall</title>
-    <link rel="stylesheet" href="/styles.css">
+    <title>DigiStall - Products</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
     <style>
         .hero-section {
-            background-color: 	#5bc0de;
+            background-color: #5bc0de;
             color: white;
         }
     </style>
@@ -25,27 +24,20 @@
                     <img src="https://th.bing.com/th/id/OIP.4XcHzFDeDP7lGhe7ubZAdQHaCH?w=347&h=100&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="DigiStall" style="width: 150px; border-radius: 15px;" class="me-2">
                 </a> 
                 <div class="collapse navbar-collapse" id="navbarNav">
-                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/products">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact">Contact</a>
-                    </li>
-                </ul>
-                    <form class="d-flex me-2">
-                        <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search">
-                        <button class="btn btn-outline-secondary" type="submit">
-                            <i class="bi bi-search"></i>
-                            <span class="visually-hidden">Search</span>
-                        </button>
-                    </form>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/dashboard">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/products">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact">Contact</a>
+                        </li>
+                    </ul>
                     <a href="/cart" class="btn btn-outline-info position-relative">
                         <i class="bi bi-cart-fill"></i>
                         <% if (typeof cartItemCount !== 'undefined' && cartItemCount > 0) { %>
@@ -56,111 +48,51 @@
                         <% } %>
                     </a>
                 </div>
+                <ul class="navbar-nav ms-5">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            User
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li class="nav-item"><a class="dropdown-item" href="#">User's Info</a></li>
+                            <li><a class="dropdown-item" href="/">Log Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                </div>
             </div>
         </nav>
     </header>
-
     <main class="container my-4">
-        <section class="mb-5">
-            <div class="hero-section rounded-3 p-5">
-                <div class="row align-items-center">
-                    <div class="col-md-6 mb-4 mb-md-0">
-                        <h2 class="display-5 fw-bold mb-3">New Arrival: Ultra Slim Laptop</h2>
-                        <p class="mb-4">Experience lightning-fast performance in a sleek design.</p>
-                        <button class="btn btn-light">Shop Now</button>
-                    </div>
-                    <div class="col-md-6">
-                        <img src="https://b2c-contenthub.com/wp-content/uploads/2023/01/0-news-lg-gram-laptop-line-up-for-2023-revealed-includes-ultraslim-model-image1-sgviouyx72-jpg.webp" alt="Ultra Slim Laptop" class="img-fluid rounded-3">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2 class="display-6 fw-bold mb-4">Featured Gadgets</h2>
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="https://i5.walmartimages.com/asr/dda6bc1f-d282-4cf9-ad29-e827222bc4d5.8d402328f4d54e2b9a252879ec51fb79.jpeg" class="card-img-top" alt="Smart Watch">
-                        <div class="card-body">
-                            <h5 class="card-title">Smart Watch</h5>
-                            <p class="card-text fw-bold">$199.99</p>
-                        </div>
-                        <div class="card-footer">
-                            <button class="btn btn-info w-100">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="https://i.ebayimg.com/images/g/qRIAAOSwgV5iMRoy/s-l1200.jpg" class="card-img-top" alt="Wireless Earbuds">
-                        <div class="card-body">
-                            <h5 class="card-title">Wireless Earbuds</h5>
-                            <p class="card-text fw-bold">$149.99</p>
-                        </div>
-                        <div class="card-footer">
-                            <button class="btn btn-info w-100">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="https://zoneofdeals.com/wp-content/uploads/2023/12/samsung-tab-a8.jpg" class="card-img-top" alt="Tablet">
-                        <div class="card-body">
-                            <h5 class="card-title">Tablet</h5>
-                            <p class="card-text fw-bold">$299.99</p>
-                        </div>
-                        <div class="card-footer">
-                            <button class="btn btn-info w-100">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="https://www.techspecs.info/_next/image/?url=https%3A%2F%2Fwww.techspecs.info%2Fuploads%2FApple_i_Phone_16_specification_feed5e61f2.jpg&w=640&q=75" class="card-img-top" alt="Smartphone">
-                        <div class="card-body">
-                            <h5 class="card-title">Smartphone</h5>
-                            <p class="card-text fw-bold">$699.99</p>
-                        </div>
-                        <div class="card-footer">
-                            <button class="btn btn-info w-100">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSZ28u2IRahliOiviiSK4xcLE2-W-obxg-_g&s" class="card-img-top" alt="Laptop">
-                        <div class="card-body">
-                            <h5 class="card-title">Laptop</h5>
-                            <p class="card-text fw-bold">$999.99</p>
-                        </div>
-                        <div class="card-footer">
-                            <button class="btn btn-info w-100">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="https://urbangadgets.ph/wp-content/uploads/JBL-Go-4-Bluetooth-Speaker-Black-1.webp" class="card-img-top" alt="Bluetooth Speaker">
-                        <div class="card-body">
-                            <h5 class="card-title">Bluetooth Speaker</h5>
-                            <p class="card-text fw-bold">$79.99</p>
-                        </div>
-                        <div class="card-footer">
-                            <button class="btn btn-info w-100">Add to Cart</button>
-                        </div>
+        <h1>Available Products</h1>
+        <div class="row">
+            <% showDashboard.forEach(product => { %>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="<%= product.image_url %>" class="card-img-top" alt="<%= product.name %>">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= product.name %></h5>
+                        <p class="card-text">Price: $<%= product.price %></p>
+                        <p class="card-text">Available Quantity: <%= product.stock_quantity %></p>
+                        <form action="/add-to-cart" method="POST">
+                            <input type="hidden" name="productId" value="<%= product.id %>">
+                            <input type="number" name="quantity" min="1" max="<%= product.stock_quantity %>" value="1" class="form-control mb-2">
+                            <button type="submit" class="btn btn-info w-100">Add to Cart</button>
+                        </form>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
-
-    <footer class="bg-dark text-white py-4 mt-5">
-        <div class="container text-center">
-            <p class="mb-0">&copy; 2024 DigiStall. All rights reserved.</p>
+            <% }) %>
         </div>
-    </footer>
+    </main>
+    
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<footer class="bg-dark text-white py-4 mt-5">
+    <div class="container text-center">
+        <p class="mb-0">&copy; 2024 DigiStall. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

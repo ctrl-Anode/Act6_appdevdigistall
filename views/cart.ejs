@@ -3,14 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GadgetStore - Your Cart</title>
+    <title>DigiStall - Products</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
     <style>
         .hero-section {
-            background-color: #0d6efd;
+            background-color: #5bc0de;
             color: white;
         }
+        html, body {
+            height: 100%; 
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .sticky-footer {
+            margin-top: auto; 
+            width: 100%; 
+        }
+        
     </style>
 </head>
 <body>
@@ -26,7 +40,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="/home">Home</a>
+                            <a class="nav-link" href="/dashboard">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/products">Products</a>
@@ -38,189 +52,57 @@
                             <a class="nav-link" href="/contact">Contact</a>
                         </li>
                     </ul>
-                    <form class="d-flex me-2">
-                        <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search">
-                        <button class="btn btn-outline-secondary" type="submit">
-                            <i class="bi bi-search"></i>
-                            <span class="visually-hidden">Search</span>
-                        </button>
-                    </form>
-                    <button class="btn btn-outline-info" type="button">
+                    <a href="/cart" class="btn btn-outline-info position-relative">
                         <i class="bi bi-cart-fill"></i>
-                        <span class="badge bg-info">3</span>
-                        <span class="visually-hidden">Items in cart</span>
-                    </button>
+                        <% if (typeof cartItemCount !== 'undefined' && cartItemCount > 0) { %>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                <%= cartItemCount %>
+                                <span class="visually-hidden">items in cart</span>
+                            </span>
+                        <% } %>
+                    </a>
                 </div>
+                <ul class="navbar-nav ms-5">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            User
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li class="nav-item"><a class="dropdown-item" href="#">User's Info</a></li>
+                            <li><a class="dropdown-item" href="/">Log Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </nav>
     </header>
-
-    <main class="container my-5">
-        <h1 class="display-4 fw-bold mb-4">My Cart</h1>
-        
+    <main class="container my-4">
+        <h1>Available Products</h1>
         <div class="row">
-            <div class="col-lg-8 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title mb-4">Cart Items</h5>
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Product</th>
-                                        <th scope="col">Price</th>
-                                        <th scope="col">Quantity</th>
-                                        <th scope="col">Total</th>
-                                        <th scope="col"></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <img src="https://www.techspecs.info/_next/image/?url=https%3A%2F%2Fwww.techspecs.info%2Fuploads%2FApple_i_Phone_16_specification_feed5e61f2.jpg&w=640&q=75" alt="Smartphone X" class="me-3" style="width: 50px; height: 50px; object-fit: cover;">
-                                                <span>Smartphone X</span>
-                                            </div>
-                                        </td>
-                                        <td>$699.99</td>
-                                        <td>
-                                            <div class="input-group" style="width: 120px;">
-                                                <button class="btn btn-outline-secondary" type="button">-</button>
-                                                <input type="text" class="form-control text-center" value="1">
-                                                <button class="btn btn-outline-secondary" type="button">+</button>
-                                            </div>
-                                        </td>
-                                        <td>$699.99</td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-danger">
-                                                <i class="bi bi-trash"></i>
-                                                <span class="visually-hidden">Remove item</span>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <img src="https://i.ebayimg.com/images/g/qRIAAOSwgV5iMRoy/s-l1200.jpg" alt="Wireless Earbuds" class="me-3" style="width: 50px; height: 50px; object-fit: cover;">
-                                                <span>Wireless Earbuds</span>
-                                            </div>
-                                        </td>
-                                        <td>$149.99</td>
-                                        <td>
-                                            <div class="input-group" style="width: 120px;">
-                                                <button class="btn btn-outline-secondary" type="button">-</button>
-                                                <input type="text" class="form-control text-center" value="1">
-                                                <button class="btn btn-outline-secondary" type="button">+</button>
-                                            </div>
-                                        </td>
-                                        <td>$149.99</td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-danger">
-                                                <i class="bi bi-trash"></i>
-                                                <span class="visually-hidden">Remove item</span>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <img src="https://i5.walmartimages.com/asr/dda6bc1f-d282-4cf9-ad29-e827222bc4d5.8d402328f4d54e2b9a252879ec51fb79.jpeg" alt="Smart Watch" class="me-3" style="width: 50px; height: 50px; object-fit: cover;">
-                                                <span>Smart Watch</span>
-                                            </div>
-                                        </td>
-                                        <td>$199.99</td>
-                                        <td>
-                                            <div class="input-group" style="width: 120px;">
-                                                <button class="btn btn-outline-secondary" type="button">-</button>
-                                                <input type="text" class="form-control text-center" value="1">
-                                                <button class="btn btn-outline-secondary" type="button">+</button>
-                                            </div>
-                                        </td>
-                                        <td>$199.99</td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-danger">
-                                                <i class="bi bi-trash"></i>
-                                                <span class="visually-hidden">Remove item</span>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+            <% cart.forEach(item => { %>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <li>
+                        <h2><%= item.product.name %></h2>
+                        <p>Quantity: <%= item.qty %></p>
+                        <p>Price: $<%= item.product.price %></p>
+                    </li>
                 </div>
             </div>
-            
-            <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title mb-4">Order Summary</h5>
-                        <div class="d-flex justify-content-between mb-2">
-                            <span>Subtotal</span>
-                            <span>$1,049.97</span>
-                        </div>
-                        <div class="d-flex justify-content-between mb-2">
-                            <span>Shipping</span>
-                            <span>$10.00</span>
-                        </div>
-                        <div class="d-flex justify-content-between mb-2">
-                            <span>Tax</span>
-                            <span>$105.00</span>
-                        </div>
-                        <hr>
-                        <div class="d-flex justify-content-between mb-4">
-                            <strong>Total</strong>
-                            <strong>$1,164.97</strong>
-                        </div>
-                        <button class="btn btn-info w-100 mb-2">Proceed to Checkout</button>
-                        <button class="btn btn-outline-secondary w-100">Continue Shopping</button>
-                    </div>
-                </div>
-                <div class="card mt-4">
-                    <div class="card-body">
-                        <h5 class="card-title mb-3">Have a promo code?</h5>
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Enter code">
-                            <button class="btn btn-outline-secondary" type="button">Apply</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <% }) %>
+            <a href="/cart/checkout">Checkout</a>
         </div>
     </main>
+    
 
-    <footer class="bg-dark text-white py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-3 mb-md-0">
-                    <h5>About GadgetStore</h5>
-                    <p>Your one-stop shop for all things tech and gadgets.</p>
-                </div>
-                <div class="col-md-4 mb-3 mb-md-0">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white">Privacy Policy</a></li>
-                        <li><a href="#" class="text-white">Terms of Service</a></li>
-                        <li><a href="#" class="text-white">FAQs</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5>Connect With Us</h5>
-                    <div class="d-flex">
-                        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
-                        <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="text-white"><i class="bi bi-linkedin"></i></a>
-                    </div>
-                </div>
-            </div>
-            <hr class="my-4">
-            <div class="text-center">
-                <p class="mb-0">&copy; 2024 DigiStall. All rights reserved.</p>
-            </div>
+    <footer class="bg-dark text-white py-4 mt-5 sticky-footer">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2024 DigiStall. All rights reserved.</p>
         </div>
     </footer>
+    
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+

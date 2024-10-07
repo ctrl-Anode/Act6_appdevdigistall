@@ -31,7 +31,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="/home">Home</a>
+                            <a class="nav-link" href="/dashboard">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/products">Products</a>
@@ -43,24 +43,13 @@
                             <a class="nav-link" href="/contact">Contact</a>
                         </li>
                     </ul>
-                    <form class="d-flex me-2">
-                        <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search">
-                        <button class="btn btn-outline-secondary" type="submit">
-                            <i class="bi bi-search"></i>
-                            <span class="visually-hidden">Search</span>
-                        </button>
-                    </form>
-                    <a href="/cart" class="btn btn-outline-info position-relative">
-                        <i class="bi bi-cart-fill"></i>
-                        <% if (typeof cartItemCount !== 'undefined' && cartItemCount > 0) { %>
-                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                <%= cartItemCount %>
-                                <span class="visually-hidden">items in cart</span>
-                            </span>
-                        <% } %>
-                    </a>
                 </div>
             </div>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Log Out</a>
+                </li>
+            </ul>
         </nav>
     </header>
 
